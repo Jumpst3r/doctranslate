@@ -63,7 +63,7 @@
 	"method": {
 		"imageType": "docker",
 		"imageName": "jumpst3r/wordtranslate",
-		"testData": "https://www.dropbox.com/s/v9bgdqbmax0v0vu/tmp5431231.zip?dl=1",
+		"testData": "https://www.dropbox.com/s/mjql474hm9vechp/tmp45654378.zip?dl=1",
 		"executableType": "bash",
 		"executable_path": "/input/script.sh"
 	}
