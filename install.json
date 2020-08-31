@@ -1,0 +1,70 @@
+{
+	"general": {
+		"name": "word_document_translation",
+		"description": "word (docx) to word translation (auto-detects input lang, user specified output lang)",
+		"developer": "Nicolas Dutly",
+		"affiliation": "University Of Fribourg",
+		"email": "ndutly@student.ethz.ch",
+		"author": "Nicolas Dutly",
+		"DOI": "",
+		"type": "text-processing",
+		"license": "MIT",
+		"ownsCopyright": "0"
+	},
+	"input": [
+		{
+			"file": {
+				"name": "inputFile",
+				"description": "The input word file to translate",
+				"options": {
+					"required": true,
+					"mimeTypes": {
+						"allowed": [
+							"application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+						],
+						"default": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+					}
+				}
+			}
+		},
+		{
+			"text": {
+				"name": "outputlang",
+				"description": "output language",
+				"options": {
+					"required": true,
+					"default": "fr"
+				}
+			}
+		},
+		{
+			"outputFolder": {}
+		}
+	],
+	"output": [
+		{
+			"file": {
+				"name": "translation",
+				"type": "docx",
+				"description": "resulting translation",
+				"options": {
+					"filename":"output.docx",
+					"mimeTypes": {
+						"allowed": [
+							"application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+						],
+						"default": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+					},
+					"visualization": false
+				}
+			}
+		}
+	],
+	"method": {
+		"imageType": "docker",
+		"imageName": "jumpst3r/wordtranslate",
+		"testData": "https://www.dropbox.com/s/v9bgdqbmax0v0vu/tmp5431231.zip?dl=1",
+		"executableType": "bash",
+		"executable_path": "/input/script.sh"
+	}
+}
