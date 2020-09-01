@@ -1,6 +1,8 @@
 from googletrans import Translator
 import argparse, googletrans
 import docx
+from time import sleep
+import os
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -15,11 +17,24 @@ if __name__ == "__main__":
     lang = args.output_language
     input_f = args.inputfilepath
     ouput_f = args.outputfolder + 'output.docx'
+    name = input_f.split('.')[0]
+    extension = input_f.split('.')[1]
     translator = Translator()
-    doc = docx.Document(input_f)
+    if extension == 'docx':
+        doc = docx.Document(input_f)
+    else:
+        os.system(f'libreoffice --convert-to docx {input_f}')
+    doc = docx.Document(name + '.docx')
+    
     for i in range(len(doc.paragraphs)):
         p = doc.paragraphs[i].text
+        print(p)
         res = translator.translate(p, dest=args.output_language).text
+        sleep(0.5)
         doc.paragraphs[i].text = res
+
     doc.save(ouput_f)
+    if extension != 'docx':
+        os.system(f'libreoffice --headless --convert-to {extension} {ouput_f} --outdir {args.outputfolder}')
+        os.system(f'rm {ouput_f}')
         

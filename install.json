@@ -1,7 +1,7 @@
 {
 	"general": {
 		"name": "word_document_translation",
-		"description": "word (docx) to word translation (auto-detects input lang, user specified output lang)",
+		"description": "document (doc,docx,odt) translation (auto-detects input lang, user specified output lang)",
 		"developer": "Nicolas Dutly",
 		"affiliation": "University Of Fribourg",
 		"email": "ndutly@student.ethz.ch",
@@ -9,18 +9,20 @@
 		"DOI": "",
 		"type": "text-processing",
 		"license": "MIT",
-		"ownsCopyright": "0"
+		"ownsCopyright": "1"
 	},
 	"input": [
 		{
 			"file": {
 				"name": "inputFile",
-				"description": "The input word file to translate",
+				"description": "The input document file to translate",
 				"options": {
 					"required": true,
 					"mimeTypes": {
 						"allowed": [
-							"application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+							"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+							"application/msword",
+							"application/vnd.oasis.opendocument.text"
 						],
 						"default": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 					}
@@ -28,12 +30,120 @@
 			}
 		},
 		{
-			"text": {
+			"select": {
 				"name": "outputlang",
 				"description": "output language",
 				"options": {
 					"required": true,
-					"default": "fr"
+					"values": [
+						"afrikaans",
+						"albanian",
+						"amharic",
+						"arabic",
+						"armenian",
+						"azerbaijani",
+						"basque",
+						"belarusian",
+						"bengali",
+						"bosnian",
+						"bulgarian",
+						"catalan",
+						"cebuano",
+						"chichewa",
+						"chinese (simplified)",
+						"chinese (traditional)",
+						"corsican",
+						"croatian",
+						"czech",
+						"danish",
+						"dutch",
+						"english",
+						"esperanto",
+						"estonian",
+						"filipino",
+						"finnish",
+						"french",
+						"frisian",
+						"galician",
+						"georgian",
+						"german",
+						"greek",
+						"gujarati",
+						"haitian creole",
+						"hausa",
+						"hawaiian",
+						"hebrew",
+						"hindi",
+						"hmong",
+						"hungarian",
+						"icelandic",
+						"igbo",
+						"indonesian",
+						"irish",
+						"italian",
+						"japanese",
+						"javanese",
+						"kannada",
+						"kazakh",
+						"khmer",
+						"korean",
+						"kurdish (kurmanji)",
+						"kyrgyz",
+						"lao",
+						"latin",
+						"latvian",
+						"lithuanian",
+						"luxembourgish",
+						"macedonian",
+						"malagasy",
+						"malay",
+						"malayalam",
+						"maltese",
+						"maori",
+						"marathi",
+						"mongolian",
+						"myanmar (burmese)",
+						"nepali",
+						"norwegian",
+						"odia",
+						"pashto",
+						"persian",
+						"polish",
+						"portuguese",
+						"punjabi",
+						"romanian",
+						"russian",
+						"samoan",
+						"scots gaelic",
+						"serbian",
+						"sesotho",
+						"shona",
+						"sindhi",
+						"sinhala",
+						"slovak",
+						"slovenian",
+						"somali",
+						"spanish",
+						"sundanese",
+						"swahili",
+						"swedish",
+						"tajik",
+						"tamil",
+						"telugu",
+						"thai",
+						"turkish",
+						"ukrainian",
+						"urdu",
+						"uyghur",
+						"uzbek",
+						"vietnamese",
+						"welsh",
+						"xhosa",
+						"yiddish",
+						"yoruba",
+						"zulu"
+					],
+					"default": 26
 				}
 			}
 		},
@@ -48,10 +158,12 @@
 				"type": "docx",
 				"description": "resulting translation",
 				"options": {
-					"filename":"output.docx",
+					"filename": "output.*",
 					"mimeTypes": {
 						"allowed": [
-							"application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+							"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+							"application/msword",
+							"application/vnd.oasis.opendocument.text"
 						],
 						"default": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
 					},
@@ -62,7 +174,7 @@
 	],
 	"method": {
 		"imageType": "docker",
-		"imageName": "jumpst3r/wordtranslate",
+		"imageName": "jumpst3r/doctranslate",
 		"testData": "https://www.dropbox.com/s/mjql474hm9vechp/tmp45654378.zip?dl=1",
 		"executableType": "bash",
 		"executable_path": "/input/script.sh"
