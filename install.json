@@ -1,7 +1,7 @@
 {
 	"general": {
 		"name": "docTranslate",
-		"description": "document (doc,docx,odt) translation (auto-detects input lang, user specified output lang)",
+		"description": "This method provides general document (doc,docx,odt) translation. It auto-detects the input language and translates the document into a user specified output language whilst retaining formatting elements and file type.",
 		"developer": "Nicolas Dutly",
 		"affiliation": "University Of Fribourg",
 		"email": "ndutly@student.ethz.ch",
