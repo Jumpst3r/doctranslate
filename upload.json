@@ -1,9 +1,38 @@
 {
- "name": "binary-image",
- "files":[
-  {
-   "type":"url",
-   "value":"http://134.21.72.190:8080/files/binary-image/original/AS_1948_00_00006.bin.png"
-  }
-  ]
+	"name":"variousdata",
+	"files":[
+		{
+			"type":"url",
+			"value":"https://www.dropbox.com/s/yz34a5uxt8iy05u/adobetest.pdf?dl=0"
+		},
+		{
+			"type":"url",
+			"value":"https://www.dropbox.com/s/ejivgyzdu96ptx4/audio.mp3?dl=1"		
+		},
+		{
+			"type":"url",
+			"value":"https://www.dropbox.com/s/lr46zrjg0lpu71n/demo_5.png?dl=1"
+		},
+		{
+			"type": "url",
+			"value": "https://www.dropbox.com/s/3gckqw7hb7deo0m/msdocument.docx?dl=1"
+		},
+		{
+			"type":"url",
+			"value":"https://www.dropbox.com/s/wptvwtbzhc28px2/msexcel.xlsx?dl=1"
+		},
+		{
+			"type":"url",
+			"value":"https://www.dropbox.com/s/ubgivtxipp8xvy7/rawtext.txt?dl=1"
+		},
+		{
+			"type":"url",
+			"value":"https://www.dropbox.com/s/wxeulmdr8k2rrf1/receipt.jpg?dl=1",
+			"name":"receipt.jpg"
+		},
+		{
+			"type":"url",
+			"value":"https://www.dropbox.com/s/hs0d2s9e6vcwmbj/resbb.csv?dl=1"
+		}
+	]
 }

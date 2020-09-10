@@ -1,10 +1,11 @@
 {
 	"general": {
-		"name": "word_document_translation",
+		"name": "docTranslate",
 		"description": "document (doc,docx,odt) translation (auto-detects input lang, user specified output lang)",
 		"developer": "Nicolas Dutly",
 		"affiliation": "University Of Fribourg",
 		"email": "ndutly@student.ethz.ch",
+		"website": "https://github.com/Jumpst3r/doctranslate",
 		"author": "Nicolas Dutly",
 		"DOI": "",
 		"type": "text-processing",
@@ -32,7 +33,7 @@
 		{
 			"select": {
 				"name": "outputlang",
-				"description": "output language",
+				"description": "target language",
 				"options": {
 					"required": true,
 					"values": [
