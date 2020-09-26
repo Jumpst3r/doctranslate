@@ -3,6 +3,7 @@ import argparse, googletrans
 import docx
 from time import sleep
 import os
+import string
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -28,6 +29,8 @@ if __name__ == "__main__":
     
     for i in range(len(doc.paragraphs)):
         p = doc.paragraphs[i].text
+        printable = set(string.printable)
+        p = ''.join(filter(lambda x: x in printable, p))
         print(p)
         res = translator.translate(p, dest=args.output_language).text
         sleep(0.5)
