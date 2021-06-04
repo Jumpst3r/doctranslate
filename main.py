@@ -18,15 +18,13 @@ if __name__ == "__main__":
     lang = args.output_language
     input_f = args.inputfilepath
     ouput_f = args.outputfolder + 'output.docx'
-    name = input_f.split('.')[0]
-    extension = input_f.split('.')[1]
+    name = '.'.join(input_f.split('.')[0:-1])
+    extension = input_f.split('.')[-1]
     translator = Translator()
-    if extension == 'docx':
-        doc = docx.Document(input_f)
-    else:
+    if extension != 'docx':
         os.system(f'libreoffice --convert-to docx {input_f}')
     doc = docx.Document(name + '.docx')
-    
+
     for i in range(len(doc.paragraphs)):
         p = doc.paragraphs[i].text
         printable = set(string.printable)
